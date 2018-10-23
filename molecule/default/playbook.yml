@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: plex
+    - role: ansible-role-plex
