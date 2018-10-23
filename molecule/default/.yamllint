@@ -1,0 +1,12 @@
+---
+
+ignore: |
+  meta/
+
+extends: default
+
+rules:
+  line-length:
+    ignore: |
+      .travis.yml
+  truthy: disable
