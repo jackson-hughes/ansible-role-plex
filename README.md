@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jhughes01/ansible-role-plex.svg?branch=master)](https://travis-ci.org/jhughes01/ansible-role-plex)
+
 Ansible role: Plex
 =========
 
