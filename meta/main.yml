@@ -21,10 +21,10 @@ galaxy_info:
   # (usually master) will be used.
   #github_branch:
 
-    platforms:
+  platforms:
     - name: CentOS
       versions:
-      - 7
+        - 7
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
