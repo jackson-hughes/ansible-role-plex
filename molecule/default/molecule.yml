@@ -12,6 +12,8 @@ platforms:
     image: centos:7
 provisioner:
   name: ansible
+  options:
+    'vault-id': '../../ANSIBLE_VAULT_PASSWORD.txt'
   lint:
     name: ansible-lint
     options:
