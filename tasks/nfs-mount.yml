@@ -1,6 +1,6 @@
 ---
 - name: Include vars
-  include_vars: main.yaml
+  include_vars: main.yml
 
 - name: Set UID of plex user in line with NFS permissions
   user:
