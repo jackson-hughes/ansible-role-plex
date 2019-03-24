@@ -12,8 +12,6 @@
     name: plexmediaserver
     state: latest
 
-- import_tasks: nfs-mount.yml
-
 - name: Start and enable plex
   service:
     name: plexmediaserver
