@@ -18,7 +18,7 @@
     state: started
     enabled: true
 
-#todo: remove firewalld from this role
+# todo: remove firewalld from this role
 - name: Plex firewall rule
   firewalld:
     port: 32400/tcp
