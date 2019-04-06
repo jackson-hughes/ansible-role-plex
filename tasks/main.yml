@@ -12,6 +12,13 @@
     name: plexmediaserver
     state: "{{ plex_version }}"
 
+- name: Manage Plex user create by RPM
+  user: 
+    name: plex
+    uid: "{{ plex_user_uid }}"
+  when: plex_user_uid is defined
+
+
 - name: Start and enable plex
   service:
     name: plexmediaserver
