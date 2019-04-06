@@ -12,7 +12,7 @@
     name: plexmediaserver
     state: "{{ plex_version }}"
 
-- name: Manage Plex user create by RPM
+- name: Manage Plex user uid created by RPM
   user:
     name: plex
     uid: "{{ plex_user_uid }}"
@@ -23,11 +23,3 @@
     name: plexmediaserver
     state: started
     enabled: true
-
-# todo: remove firewalld from this role
-- name: Plex firewall rule
-  firewalld:
-    port: 32400/tcp
-    permanent: true
-    state: enabled
-    immediate: true
