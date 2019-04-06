@@ -1,5 +1,5 @@
 ---
-- name: Add plex repo
+- name: Add plex repository
   yum_repository:
     name: plex
     description: Plex Media Server repo
@@ -10,19 +10,16 @@
 - name: Install Plex Media Server package
   yum:
     name: plexmediaserver
-    state: latest
+    state: "{{ plex_version }}"
 
-- import_tasks: nfs-mount.yml
+- name: Manage Plex user uid created by RPM
+  user:
+    name: plex
+    uid: "{{ plex_user_uid }}"
+  when: plex_user_uid is defined
 
 - name: Start and enable plex
   service:
     name: plexmediaserver
     state: started
     enabled: true
-
-- name: Plex firewall rule
-  firewalld:
-    port: 32400/tcp
-    permanent: true
-    state: enabled
-    immediate: true

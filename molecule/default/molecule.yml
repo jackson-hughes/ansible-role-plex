@@ -9,11 +9,11 @@ lint:
     config-file: ./molecule/default/.yamllint
 platforms:
   - name: instance
-    image: centos:7
+    image: centos/systemd:latest
+    privileged: True
+    command: /usr/sbin/init
 provisioner:
   name: ansible
-  options:
-    'vault-id': '../../ANSIBLE_VAULT_PASSWORD.txt'
   lint:
     name: ansible-lint
     options:

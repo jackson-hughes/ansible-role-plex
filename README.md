@@ -8,12 +8,18 @@ This role installs and configures Plex Media Server.
 Requirements
 ------------
 
-This role has no requirements.
+The only additional step you will need to take after installing plex with this role is to ensure that port 32400/tcp (default) is opened. 
+
+If you use firewalld, I have a simple role [here](https://github.com/jhughes01/ansible-role-firewalld), that will manage firewall ports for you.
 
 Role Variables
 --------------
 
-This role (currently) has no variables. Some role huh?
+This role currently supports 3 variables:
+
+`plex_version`: The version of plex media server to install.
+`plex_base_url`: The base url for the plex repository.
+`plex_user_uid`: A variable allowing you to overwride the UID of the plex user.
 
 Dependencies
 ------------
