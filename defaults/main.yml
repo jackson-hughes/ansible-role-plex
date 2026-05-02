@@ -1,4 +1,6 @@
 ---
 # defaults file for ansible-role-plex
-plex_repo_url: "https://downloads.plex.tv/repo/rpm/$basearch/"
+plex_repo_name: "plex"
+plex_repo_url: "https://repo.plex.tv/rpm/"
+plex_repo_key_url: "https://downloads.plex.tv/plex-keys/PlexSign.v2.key"
 plex_version: "latest"
