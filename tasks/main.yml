@@ -1,25 +1,30 @@
 ---
+- name: Add plex repository key
+  ansible.builtin.rpm_key:
+    state: present
+    key: "{{ plex_repo_key_url }}"
+
 - name: Add plex repository
-  yum_repository:
-    name: plex
+  ansible.builtin.yum_repository:
+    name: "{{ plex_repo_name }}"
     description: Plex Media Server repo
-    baseurl: https://downloads.plex.tv/repo/rpm/$basearch/
+    baseurl: "{{ plex_repo_url }}"
     gpgcheck: true
-    gpgkey: https://downloads.plex.tv/plex-keys/PlexSign.key
+    gpgkey: "{{ plex_repo_key_url }}"
 
 - name: Install Plex Media Server package
-  yum:
+  ansible.builtin.package:
     name: plexmediaserver
     state: "{{ plex_version }}"
 
 - name: Manage Plex user uid created by RPM
-  user:
+  ansible.builtin.user:
     name: plex
     uid: "{{ plex_user_uid }}"
   when: plex_user_uid is defined
 
 - name: Start and enable plex
-  service:
+  ansible.builtin.service:
     name: plexmediaserver
     state: started
     enabled: true
